@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task-2</title>
+</head>
+<body>
+    <h1>Alphabetic Sort</h1>
+    <label for="stringInput">Enter a String:</label>
+    <input type="text" id="stringInput">
+    <button onclick="sortString()">Sort</button>
+    <p id="result"></p>
+    <h5 style="color: rgb(193, 193, 193);">Sorts based on ASCII values.</h5>
+
+    <script>
+        function sortString() {
+            const stringInput = document.getElementById("stringInput");
+            const resultElement = document.getElementById("result");
+            const userInput = stringInput.value;
+
+            const sortedStr = alphabeticSort(userInput);
+            resultElement.textContent = `Sorted String: ${sortedStr}`;
+        }
+
+        function alphabeticSort(str) {
+            const sortedStr = str.split('').sort().join('');
+            return sortedStr;
+        }
+    </script>
+</body>
+</html>
